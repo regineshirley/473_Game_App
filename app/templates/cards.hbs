@@ -1,0 +1,64 @@
+<div class="panel panel-default">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Question</th>
+        <th>Anwswer</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |card|}}
+        <tr>
+          <td>{{card.id}}</td>
+          <td>{{card.question}}</td>
+          <td>{{card.answer}}</td>
+          <td>{{card.a}}</td>
+          <td>{{card.b}}</td>
+          <td>{{card.c}}</td>
+          <td>{{card.d}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Add a Card</div>
+  <div class="panel-body">
+    <p>If you feel the need to add more, add from <a href=https://pastebin.com/raw/QRGzxxEy>here</a></p>
+    <form>
+        <div class="form-group">
+          <label>Question</label>
+          {{input type="text" class="form-control" value=question}}
+        </div>
+        <div class="form-group">
+          <label>Answer (lower-case letter: a b c d)</label>
+          {{input type="text" class="form-control" value=answer}}
+        </div>
+        <div class="form-group">
+          <label>A</label>
+          {{input type="text" class="form-control" value=a}}
+        </div>
+        <div class="form-group">
+          <label>B</label>
+          {{input type="text" class="form-control" value=b}}
+        </div>
+        <div class="form-group">
+          <label>C</label>
+          {{input type="text" class="form-control" value=c}}
+        </div>
+        <div class="form-group">
+          <label>D</label>
+          {{input type="text" class="form-control" value=d}}
+        </div>
+        <button {{action 'addCard'}} class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+{{outlet}}

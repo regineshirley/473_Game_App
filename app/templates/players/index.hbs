@@ -1,0 +1,12 @@
+<h1>Players</h1>
+  {{#each model as |player|}}
+    <div class="well">
+      <h4>ID: {{player.id}}</h4>
+      <h5>Username: {{player.username}}</h5>
+      <h5>First Name: {{player.firstName}}</h5>
+      <h5>Last Name: {{player.lastName}}</h5>
+      <h5>Score: {{player.score}}</h5>
+    </div>
+  {{/each}}
+
+{{outlet}}

@@ -1,0 +1,45 @@
+<h1>Welcome to the Triva Room!</h1>
+<br>
+<!-- <div class = "mainbox">
+<form class="triviaForm">
+  <div class="row">
+    {{#each model as |card|}}
+      <h4><b>Question:</b> {{card.question}}</h4>
+      <ul>
+        <div class="radio">
+          <label>
+            <input type="radio" name="choice" value="a">{{card.a}}
+            {{radio-button value='a' checked=choice}}
+            {{card.a}}
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            {{radio-button value='b' checked=choice}}
+            {{card.b}}
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            {{radio-button value='c' checked=choice}}
+            {{card.c}}
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            {{radio-button value='d' checked=choice}}
+            {{card.d}}
+          </label>
+        </div>
+      </ul>
+    <button {{action 'answerCheck' card.answer}} class="btn btn-primary">Submit</button>
+    {{a-websocket card-answer=card.answer user-answer=choice email=session.currentUser.email}}
+    {{/each}}
+
+  </div>
+</form>
+</div> -->
+
+{{a-websocket card-answer=answer user-answer=choice email=session.currentUser.email}}
+
+{{outlet}}

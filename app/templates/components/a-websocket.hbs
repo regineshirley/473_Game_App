@@ -1,0 +1,54 @@
+<!-- Eric: This is the button for the a-websocket component -->
+<!-- I'm not sure if this is in the ideal location -->
+
+<div class = "mainbox">
+  <form class="triviaForm">
+    <div class="row">
+      {{#each questions as |question|}}
+      <h4><b>Question:</b> {{question}}</h4>
+      <ul>
+        {{#each a as |answerA|}}
+        <div class="radio">
+          <label>
+            {{radio-button value='a' checked=choice}}
+            {{answerA}}
+          </label>
+        </div>
+        {{/each}}
+        {{#each b as |answerB|}}
+        <div class="radio">
+          <label>
+            {{radio-button value='b' checked=choice}}
+            {{answerB}}
+          </label>
+        </div>
+        {{/each}}
+        {{#each c as |answerC|}}
+        <div class="radio">
+          <label>
+            {{radio-button value='c' checked=choice}}
+            {{answerC}}
+          </label>
+        </div>
+        {{/each}}
+        {{#each d as |answerD|}}
+        <div class="radio">
+          <label>
+            {{radio-button value='d' checked=choice}}
+            {{answerD}}
+          </label>
+        </div>
+        {{/each}}
+      </ul>
+      {{/each}}
+
+      <button {{action 'sendButtonPressed'}} class="btn btn-block btn-primary">
+        WebSocket Submit
+      </button>
+
+    </div>
+  </form>
+</div>
+<p>Your email: {{this.email}}</p>
+
+{{yield}}
